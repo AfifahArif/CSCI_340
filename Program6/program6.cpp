@@ -5,11 +5,10 @@ Due Date: October 30, 2018
 */
 
 #include <iostream>		// cout, endl
-#include <iomanip>		
+#include <iomanip>
 #include <math.h>
-#include <vector>		// vector
 #include <algorithm>
-#include "bintree.h"
+#include "binTree.h"
 
 using namespace std;
 
@@ -17,6 +16,7 @@ class RND1
 {
 	private:
 		int low, high;
+
 	public:
 		static int RND()
 		{
@@ -29,13 +29,12 @@ class RND1
 class RND2
 {
 	float randm;
-
 	public:
-	static float RND()
-	{
-		srand(time(NULL));
-		return -999.99 + static_cast <float> (rand()) /( static_cast <float> (RAND_MAX/(999.99+999.99)));
-	}
+		static float RND()
+		{
+			srand(time(NULL));
+			return -999.99 + static_cast <float> (rand()) /( static_cast <float> (RAND_MAX/(999.99+999.99)));
+		}
 };
 
 template <class T>
@@ -52,34 +51,31 @@ int main()
 	RND1 obj3=RND1();
 
 	std::cout << "\nIn order traversal of int tree: \n";
-	
 	binTree <int> tr=binTree <int> ( );
 	int count=1;
 	generate(A.begin(), A.end(), &RND1::RND);
-	
 	for (auto iv: A) 
 	{
 		tr.insert(iv);
 	}
-	tr.inOrder(&print);
+	tr.inorder(&print);
 
 	//float tree
 	std::cout << "\n\nIn order traversal of float tree: \n";
-	
 	binTree <float> tr1=binTree <float> ( );
 	generate(B.begin(), B.end(), &RND2::RND);
-	
-	for (auto iv: B)
+	for (auto iv: B) 
 	{
 		tr1.insert(iv);
 	}
-	tr1.inOrder(&print);
 
+	tr1.inorder(&print);
 	//print heights
+
 	cout<<"\nint tree height"<<tr.height;
+
 	cout<<"\nfloat tree height"<<tr1.height();
 	cout<<endl;
 	system("pause");
-	
 	return 0;
 }
