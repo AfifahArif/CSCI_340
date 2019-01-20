@@ -1,6 +1,6 @@
 /***
 Afifah Arif
-Assignment 9 = Hashing with Linear Probing and Indirect Sorting
+Assignment 9 - Hashing with Linear Probing and Indirect Sorting
 Due Date: November 27, 2018
 ***/
 
