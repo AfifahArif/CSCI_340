@@ -1,0 +1,22 @@
+CSCI-340
+
+Complete the following code to print 3 2 1 and 1 2 3. You can use only the empty space.
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+int main()
+{int arr[]={1,2,3};
+vector<int> v(arr, arr + sizeof(arr)/sizeof(arr[0])), v2(3);
+vector <int>::iterator it;
+vector<int>::reverse_iterator ir;
+copy(v.rbegin(), v.rend(), v2.begin());
+for (it = _________;______________;_________)
+	cout << _________ << " ";
+cout << endl;
+for (ir = _________;______________;_________)
+	cout << _________ << " ";
+return 0;
+}

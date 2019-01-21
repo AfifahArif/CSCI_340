@@ -1,0 +1,128 @@
+CSCI-340 Midterm Exam Fall 2018
+
+Part 1: Multiple choice questions(circle the best answer). (2 points each, total 10)
+
+1. A queue is a structure implementing 
+	A. First-in/last-out 
+	B. First-in/first-in 
+	C. Last-in/first-out 
+	D. None of the above 
+2. The container method end() returns an iterator that points to the 
+	A. First element in the sequence 
+	B. Last element in the sequence 
+	C. Element past the end in the sequence 
+	D. None of the above 
+3. A container that provides fast insertion and deletion at both ends 
+	A. Vector 
+	B. Deque 
+	C. List 
+	D. None of the above 
+4. __________ support fast random access to the elements 
+	A. Vector deque 
+	B. Vector and list 
+	C. Deque and list 
+	D. set and list
+5. A list in STL has __________ 
+	A. A key/value 
+	B. Random access to elements 
+	C. No direct random access elements 
+	D. None of the above 
+6. __________ are containers that store elements following a specific order and where multiple elements can have equivalent values 
+	A. Vectors 
+	B. List 
+	C. Sets 
+	D. None of the above 
+7. The output of the following code is 
+	set<int, less<int>> s1;
+	set<int>::iterator it;
+	for(int i=7;i>4;i--)
+		s1.insert(i);
+	for(it=s1.begin(); it != s1.end(); ++i)
+		cout << *it << "";
+	A. 456 
+	B. 654	 
+	C. 567 
+	D. 765 
+	E. None of the above 
+8. The output of the following code is 
+	multimap <string, int> mymap;
+	mymap.insert(make_pair("Orange", 4));
+	mymap.insert(make_pair("Apple", 8));
+	mymap.insert(make_pair("Watermelon", 5));
+	mymap.insert(make_pair("Grapes", 2));
+	multimap <string, <int>::const_iterator it;
+	it = mymap.begin();
+	while (it != mymap.end())
+		cout << it++->second << " ";
+	A. 356 
+	B. 9356 
+	C. 245 
+	D. Orange apple watermelon grapes 
+	E. None of the above 
+9. The output of the following code is 
+	bool fun(int i) { return (i*2>10); }
+	int main() {
+		vector <int> v;
+		vector <int>::iterator it, it2;
+		v.push_back(7);v.push_back(6);v.push_back(5);
+		v.push_back(4);v.push_back(3);v.push_back(2);
+		it2 = remove_if(v.begin(), v.end(), fun);
+		for (it = v.begin(); it != it2; ++it)
+			cout << *it << " ";   }
+	A. 432 
+	B. 765 
+	C. 5432 
+	D. 7542 
+	E. End of the above
+10. Classes that use an encapsulated object of a specific container class as its underlying container 
+	A. Sequence containers  
+	B. Associative containers 
+	C. Container adapters 
+	D. None of the above 
+
+Part 2 Cullen: Coding questions 
+
+11. Complete the following function that merges two sorted vectors v1 and v2 into a sorted vector v3. You must use iterators. (12 points)
+void Merge(vector<int> v1, vector<int> v2 vector<int> &v3)
+{
+	vector<int>::iterator it1, it2;
+	____________________
+	____________________
+	while(it1!= v1.end() && it2!=v2.end())
+	{
+		if (____________________)
+			____________________
+		else
+			____________________
+	}
+	//Copy the remaining items
+	while(it1 != v1.end())
+		____________________
+	while(it2 != v2.end())
+		____________________	
+}
+
+12. Complete the following code to implement a priority queue. You can use the following queue operations: (14 points total)
+	- void push (value);
+	- void pop();
+	- int front();
+	- int back();
+	- bool empty();
+	- int size();
+
+void insertTarget(queue<int> &q, int target)
+{
+	queue<int> q2;
+	while (____________________ && ____________________)
+	{
+		____________________
+		____________________
+	}
+	__________
+	while (____________________)
+	{
+		____________________
+		____________________
+	}
+	__________
+}
